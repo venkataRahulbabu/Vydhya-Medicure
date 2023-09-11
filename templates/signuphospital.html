@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Sign Up</title>
+    <link rel="stylesheet" href="/static/css/newsignup.css">
+</head>
+<body>
+  {{n}}
+    <center>
+        <form  method="POST" enctype="multipart/form-data" action="{% url 'hospitalsignup' %}">
+          {% csrf_token %}
+        <h1>Sign Up</h1>
+    <div class="container">
+        <form action="">
+          <div class="row">
+            <div class="col-25">
+              <label for="hname">Hospital Name:</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="hname" name="hname">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+                <label for="branch">No.of Branches:</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="branch" name="branch">
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="hname">Est.Year:</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="estyear" name="estyear">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="address">Address:</label>
+            </div>
+            <div class="col-75">
+              <textarea id="address" name="address" style="height:180px"></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="pin">Pincode:</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="pin" name="pin">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+                <label for="email">Hospital Email:</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="email" name="email">
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="phone">Contact Number:</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="phone" name="phone">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-25">
+              <label for="password">Password:</label>
+            </div>
+            <div class="col-75">
+                <input class="col-75" style="height:30px;"type="password" id="password" name="password">
+            </div>
+          </div>
+
+
+
+          {% comment %} <div class="row">
+            <div class="col-25">
+              <label for="myfile">Hospital Image:</label>
+            </div>
+            <div class="col-75">
+              <input style="float:left;" type="file" id="myfile" name="myfile">
+            </div>
+          </div> {% endcomment %}
+          <div class="row">
+            <input type="submit" value="Submit">
+          </div>
+        </form>
+      </div>
+    </form>
+    </center>
+</body>
+</html>

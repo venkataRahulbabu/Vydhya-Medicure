@@ -1,0 +1,73 @@
+<!DOCTYPE  html>
+<html>
+<head>
+	<title>Login</title>
+		<style type="text/css">
+			body{
+				background: url("img/image.png")no-repeat;background-size: cover;
+				background-origin: content-box;font-family: arial;
+			}
+			form{
+				top: 50%;left: 50%;transform: translate(-50%,-50%);background: #fff;
+				width: 350px;height: 400px;padding: 20px;position: absolute;
+			}
+			input[type="text"], input[name="password"]{
+				background: #eee;padding: 10px;border: 1px solid #ccc;width: 250px;
+				border-radius: 4px;
+			}
+			input[type="submit"]{
+				padding: 10px;width: 270px;background: #444;color: #fff;border: none;
+				border-radius: 3px;outline: none;cursor: pointer;
+			}
+			input[type="submit"]:hover{
+				background-color: #333;
+			}
+			label{
+				float: left;margin-left: 55px;
+			}
+			.fbtn{
+				background: #fff;border: 1px solid #ccc;float: left;margin-left:40px;
+				border-radius: 4px;width: 110px;
+			}
+			.ggbtn{
+				background: #fff;border: 1px solid #ccc;float: left;margin-left: 40px;
+				border-radius: 4px;width: 110px;
+			}
+			.img{
+				width: 35px;height: auto;padding: 2px;
+			}
+			</style>
+</head>
+<body>
+	<center>
+		{{n}}
+        <form method="POST" action="{% url 'signin' %}">
+			{% csrf_token %}
+			<div>
+				
+				<h>Sign in with</h>
+			</div><br>
+
+			
+            
+			<div>
+				<label>EMAILID</label><br>
+				<input type="text" name="emailid">
+			</div><br>
+
+			<div>
+				<label>Password: <a href="{% url 'forget' %}">Forgot?</a></label><br>
+				<input type="password" name="password">
+			</div><br>
+
+			<div>
+				<input type="submit" name="submit" value="Sign In">
+			</div><br><br>
+
+			<span>
+				Not a member?<a href="{% url 'signup' %}">Sign Up</a>
+			</span>
+		</form>
+	</center>
+</body>
+</html>

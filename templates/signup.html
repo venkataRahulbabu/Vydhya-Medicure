@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Sign Up</title>
+
+		<style type="text/css">
+			body{
+				background: url("img/image.png")no-repeat;background-size: cover;
+				background-origin: content-box;font-family: arial;
+			}
+			form{
+				top: 50%;left: 50%;transform: translate(-50%,-50%);background: #fff;
+				width: 350px;height: 400px;padding: 20px;position: absolute;
+			}
+			input[type="text"], input[name="password"]{
+				background: #eee;padding: 10px;border: 1px solid #ccc;width: 250px;
+				border-radius: 4px;
+			}
+			input[type="email"], input[name="email"]{
+				background: #eee;padding: 10px;border: 1px solid #ccc;width: 250px;
+				border-radius: 4px;
+			}
+			input[type="radio"], input[name="gender"]{
+				background: #eee;padding: 10px;border: 1px solid #ccc;width: 250px;
+				border-radius: 4px;
+			}
+			input[type="number"], input[name="Age"]{
+				background: #eee;padding: 10px;border: 1px solid #ccc;width: 250px;
+				border-radius: 4px;
+			}
+			input[type="submit"]{
+				padding: 10px;width: 270px;background: #444;color: #fff;border: none;
+				border-radius: 3px;outline: none;cursor: pointer;
+			}
+			input[type="submit"]:hover{
+				background-color: #333;
+			}
+			label{
+				float: left;margin-left: 55px;
+			}
+			</style>
+</head>
+<body>
+	<center>
+		
+		{{n}}
+		<form method="POST" action="{% url 'login' %}">
+			{% csrf_token %}
+            <div>
+				<label for="selectoption"><b>Sign Up As</b></label>
+				<select name="selectoption">
+					<option value="Patient" >Patient</option>
+					<option value="Doctor" >Doctor</option>
+				  </select>
+            </div><br> 
+
+
+
+			<div>
+				<label>Firstname</label><br>
+				<input type="text" name="fname">
+			</div><br>
+
+			<div>
+				<label>Lastname</label><br>
+				<input type="text" name="lname">
+			</div><br>
+
+			<div>
+				<label>Email id</label><br>
+				<input type="email" name="email">
+			</div><br>
+
+			<div>
+				<label>Password</label><br>
+				<input type="password" name="password">
+			</div><br>
+
+			<div>
+				<label><b>Gender</b></label><br>
+                    <input type="radio" value="M" name="gender">
+					<label for="male">Male</label>
+                    <input type="radio" value="F" name="gender">
+					<label for="female">Female</label>
+			</div><br>
+
+			<div>
+				<input type="submit" name="submit" value="Sign Up">
+			</div><br><br>
+		</form>
+	</center>
+</body>
+</html>
